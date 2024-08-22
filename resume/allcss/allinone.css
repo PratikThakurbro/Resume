@@ -1,0 +1,395 @@
+/* General reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Body and HTML styles */
+body, html {
+    width: 100%;
+    /* height: 100%; */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #080808;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    /* align-items: center; */
+    background-image:url(../img/bg3.jpg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;  
+    position: relative;
+
+}
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(172, 197, 241, 0.212); /* Example overlay color */
+    z-index: 1; /* Place behind the content */
+}
+
+
+/* Container styles */
+.container {
+    width: 90%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 10px;
+    color: whitesmoke;
+    position: relative;
+    z-index: 6;
+    margin-bottom: 10px;
+
+}
+
+.logo img {
+    height: 40px; /* Adjust height as needed */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #555;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+   
+
+}   
+
+.nav-links a:hover {
+    background-color: white;
+    color: #555;
+}
+.active{
+    background-color: white;
+    color: #555;
+}
+/* Mobile menu toggle */
+.nave-icon{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nave-icon i {
+    font-size: 20px;
+    cursor: pointer; 
+}
+ 
+/* Header styles */
+.section {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    box-shadow: 1px 1px 1px 0 rgb(201, 201, 202);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-elements do not overflow */
+}
+
+/* ::before pseudo-element */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(171, 207, 255, 0.397); /* Semi-transparent overlay */
+    z-index: 2; /* Ensure it sits above the background but below other content */
+}
+
+/* Hide all forms initially */
+#register-form,  #forgot-password-form {
+    display: none;
+}
+/* #register-form{
+    display: block;
+} */
+
+/* Register-form styles */
+.register-form {
+    max-width: 800px;
+    width: 60%;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 0px  #8d8dff;
+    color: #000;
+    z-index: 9;
+    transition: opacity 0.5s ease-in-out; 
+}
+.register-form p {
+    font-size: 1.2em;
+    color: #7371f0;
+    margin-bottom: 10px;
+}
+
+
+.register-form h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2.4em;
+    color: rgb(0, 0, 0);
+    margin: 10px 0;
+    z-index: 4;
+}
+.register-form h2 .way{
+    color: #7371f0;
+    font-size: 1.2em;
+
+}
+.register-form h5 {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.button-box {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.registernow-button, .login-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.registernow-button:hover, .login-button:hover {
+    background-color: #0056b3;
+    color: #fff7f7;
+}
+.registernow-button:focus, .login-button:focus {
+    outline: 2px solid #cfe3f8; /* Focus outline color */
+    outline-offset: 2px; /* Offset for the outline */
+}
+
+/* Form styles */
+.account-create-form, .forget-box {
+    flex: 1;
+    max-width: 750px;
+    width: 60%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #000;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+.account-create-form .form {
+    background-color: #f9f9f9;
+}
+
+.account-create-form h2, .forget-box h2 {
+    font-size: 2em;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.account-create-form label, .forget-box label {
+    display: block;
+    margin-bottom: 5px;
+    color: #7371f0;
+    font-size: 1em;
+}
+
+.account-create-form input, .forget-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+/* Error message styles */
+.error-register, .error-login, .error-forgot-pass {
+    color: red;
+    transition: opacity 0.5s ease-in-out;
+}
+ /* Default border color */
+ input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+/* Border color for inputs with errors */
+input.error {
+    border-color: red;
+}
+
+/* Close icon styles */
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px; 
+    color: #3e3f3e; 
+}
+.forget-box, .account-create-form{
+    position: relative;
+}
+
+/* Image styles */
+.img {
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+    /* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Navigation Links */
+    .nav-links {
+        display: none; /* Hide the nav-links by default */
+        flex-direction: column;
+        position: relative;
+        position: absolute;
+        top: 45px; /* Adjust position as needed */
+        right: 0px; /* Adjust position as needed */
+        background-color: transparent;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        padding: px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        gap: 4px;
+        background-color: #96b7f5;
+    }
+    .active {
+        background-color: rgb(0, 0, 0);
+        color: #ffffff;
+    }
+
+    .nav-links a {
+        /* background-color: #000; */
+        font-size: 12px;
+        color: #fffefe;
+        text-decoration: none;
+        padding: 5px 10px;
+        /* border-bottom: 1px solid #ddd; */
+        z-index: 1000;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none; /* Remove the border for the last item */
+    }
+
+    /* Menu Icon */
+    .nave-icon {
+        display: flex; /* Show the menu icon */
+        flex-direction: column;
+        cursor: pointer;
+        font-size: 30px;
+        color: #555;
+    }
+
+    /* Register Form, Account Create Form, and Forget Box */
+    .register-form {
+        max-width: 800px;
+        width: 100%;
+    
+        z-index: 2;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .img {
+        width: 100%;
+        position: relative;
+        /* margin-top: 20px; */
+        text-align: center;
+    }
+
+    .img img {
+        max-width: 100%;
+        height: 300px;
+        border-radius: 8px;
+    }
+
+    /* Form Headings */
+    .register-form h2,
+    .account-create-form h2,
+    .forget-box h2 {
+        font-size: 1.5em;
+    }
+
+    .register-form h5 {
+        font-size: 1em;
+    }
+
+    /* Buttons */
+    .registernow-button,
+    .login-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    /* Form Input and Labels */
+    .account-create-form input,
+    .forget-box input {
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .account-create-form label,
+    .forget-box label {
+        font-size: 12px;
+    }
+}
+
+
